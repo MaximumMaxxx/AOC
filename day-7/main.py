@@ -1,5 +1,6 @@
-import math
+import math, time
 
+start_time = time.time()
 input = open("input.txt","r")
 inputraw = input.read()
 
@@ -45,5 +46,4 @@ while minc[0] != midc[0]:
     print(midc)
 
 
-    
-print(f"The best fuel is {midc[0]}")
+print(f"The best fuel is {midc[0]}, Calculated in {time.time()-start_time}s")
