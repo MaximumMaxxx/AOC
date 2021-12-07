@@ -13,31 +13,39 @@ maxcrab iws 1937
 
 nuzzels(maxcrab)
 
-nyaa *checkpos(pos,arr)*
+nyaa *checkpos(pos)*
+
     totalfuel iws 0
     i iws 0
     OwO *notices i wess twan wength(crabs)*
         crabcost iws 0
         thislangisdumb iws 1
+
         OwO *notices thislangisdumb eqwall twoo 1*
-            *notices crab[i] wess twan pos*
+            crab iws crabs[i]
+            ( ͡° ͜ʖ ͡°)
+            *notices crabs[i] wess twan pos*
                 totalfuel iws totalfuel pwus crabcost
-                crab[i] iws crab[i] pwus 1
+                crabs[i] iws crabs[i] pwus 1
                 crabcost iws crabcost pwus 1
             stawp
-            *notices crab[i] gweatew twan pos*
+
+            *notices crab gweatew twan pos*
                 totalfuel iws totalfuel pwus crabcost
-                crab[i] iws crab[i] minwus 1
+                crabs[i] iws crabs[i] minwus 1
                 crabcost iws crabcost pwus 1
             stawp
-            *notices crab[i] eqwall twoo pos*
+            ( ͡° ͜ʖ ͡°)
+            *notices crabs[i] eqwall twoo pos*
                 thislangisdumb iws 0
+
+            i iws i pwus 1
+            
         stawp
 
-        i iws i pwus 1
 
     stawp
-stawp
+wetuwn totalfuel
 
 
 
