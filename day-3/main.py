@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 input = open("input.txt","r")
 input_raw = input.read()
 
@@ -16,8 +19,6 @@ def count_bits(arr):
     
     return output_lst
 
-print(count_bits(inputlst))
-
 gamma = ''
 for i in count_bits(inputlst):
     if i[0] > i[1]:
@@ -32,15 +33,16 @@ epsilon = int("1"*len(count_bits(inputlst)))-int(gamma)
 gamma= int(gamma,2)
 epsilon = int(str(epsilon),2)
 
+print(f"Gamma and epsilon took {time.time()-start_time}s to calculate")
 print(f"Gamma: {gamma}")
 print(f"Epsilon: {epsilon}")
 print(f"Total power: {gamma*epsilon}")
+start_time = time.time()
 
 # Oxygen Crap
 oxy_list = inputlst
 bit = 0
 while len(oxy_list) != 1:
-    print(len(oxy_list))
     bit_count = count_bits(oxy_list)
     check_bit = 0 if bit_count[bit][0] > bit_count[bit][1] else 1
 
@@ -51,7 +53,6 @@ while len(oxy_list) != 1:
 co2_list = inputlst
 bit = 0
 while len(co2_list) != 1:
-    print(len(co2_list))
     bit_count = count_bits(co2_list)
     check_bit = 1 if bit_count[bit][0] > bit_count[bit][1] else 0
 
@@ -61,6 +62,7 @@ while len(co2_list) != 1:
 co2= int(co2_list[0],2)
 oxy = int(oxy_list[0],2)
 
+print(f"Co2 and Oxygen took {time.time()-start_time}s to calculate")
 print(f"Co2: {co2}")
 print(f"Oxygen: {oxy}")
 print(f"Total lifesupport: {co2*oxy}")
