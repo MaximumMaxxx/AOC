@@ -1,3 +1,5 @@
+import math
+
 input = open("input.txt","r")
 inputraw = input.read()
 
@@ -12,14 +14,12 @@ for i in crabs:
 
 print(max_crab)
 
-best_fuel = 99999999999999999999999999999999999
-for i in range(max_crab):
-    print(i)
+def check_pos(pos,arr):
     total_fuel = 0
-    for crab in crabs:
+    for crab in arr:
         crab_fuel_cost = 1
-        while crab != i:
-            if crab < i:
+        while crab != pos:
+            if crab < pos:
                 total_fuel+=crab_fuel_cost
                 crab += 1
                 crab_fuel_cost += 1
@@ -27,8 +27,23 @@ for i in range(max_crab):
                 total_fuel+=crab_fuel_cost
                 crab -= 1
                 crab_fuel_cost += 1
+    return (total_fuel,pos)
 
-    if total_fuel < best_fuel:
-        best_fuel = total_fuel
+minc = check_pos(1,crabs)
+maxc = check_pos(max_crab,crabs)
+midc = check_pos(math.floor(max_crab/2),crabs)
+
+while minc[0] != midc[0]:
+    if minc[0] < midc[0]:
+        # Recalculate mid and find new max
+        maxc = midc
+        midc = check_pos(math.floor((maxc[1] + minc[1])/2),crabs)
+    else:
+        # Recalculate mid and find new max
+        minc = midc
+        midc = check_pos(math.floor((maxc[1] + minc[1])/2),crabs)
+    print(midc)
+
+
     
-print(f"The best fuel is {best_fuel}")
+print(f"The best fuel is {midc[0]}")
