@@ -1,17 +1,44 @@
-nuzzels("Yeet")
-awway_len iws 10
+contwents iws wead("input.txt")
+i iws 0
 
-cwabs iws awway<awway_len;int>
+OwO *notices i wess twan wength(contwents)*
+    crabs iws spwit(contwents[i],",")
 
-cwabs[0] iws 16
-cwabs[1] iws 1
-cwabs[2] iws 2
-cwabs[3] iws 0
-cwabs[4] iws 4
-cwabs[5] iws 2
-cwabs[6] iws 7
-cwabs[7] iws 1
-cwabs[8] iws 2
-cwabs[9] iws 14
 
-nuzzels(cwabs[0])
+    i iws i pwus 1
+stawp
+nuzzels(crabs)
+
+maxcrab iws 1937
+
+nuzzels(maxcrab)
+
+nyaa *checkpos(pos,arr)*
+    totalfuel iws 0
+    i iws 0
+    OwO *notices i wess twan wength(crabs)*
+        crabcost iws 0
+        thislangisdumb iws 1
+        OwO *notices thislangisdumb eqwall twoo 1*
+            *notices crab[i] wess twan pos*
+                totalfuel iws totalfuel pwus crabcost
+                crab[i] iws crab[i] pwus 1
+                crabcost iws crabcost pwus 1
+            stawp
+            *notices crab[i] gweatew twan pos*
+                totalfuel iws totalfuel pwus crabcost
+                crab[i] iws crab[i] minwus 1
+                crabcost iws crabcost pwus 1
+            stawp
+            *notices crab[i] eqwall twoo pos*
+                thislangisdumb iws 0
+        stawp
+
+        i iws i pwus 1
+
+    stawp
+stawp
+
+
+
+nuzzels(checkpos(50,crabs))
