@@ -1,102 +1,66 @@
-input = open("sampleinput.txt","r")
+input = open("input.txt","r")
 input_raw = input.read()
 
 inputlst = [item for item in input_raw.split('\n')]
 
+def count_bits(arr):
+    output_lst = []
+    for bit_index in range(len(arr[0])):
+        temp_lst = [0,0]
+        for item in arr:
+            if item[bit_index] == '0':
+                temp_lst[0] += 1
+            else:
+                temp_lst[1] += 1
+        output_lst.append(temp_lst)
+    
+    return output_lst
 
-bit_count = len(inputlst[0])
-bits_count = []
-
-for i in range(bit_count):
-    bits_count.append([0,0])
-
-
-for set in inputlst:
-    print(set)
-    bit_index = 0
-    for bit in set:
-        bit = int(bit)
-        if bit == 0:
-            bits_count[bit_index][0]+=1
-        else:
-            bits_count[bit_index][1]+=1
-        print(bits_count,bit_index,bit)
-        bit_index+=1
-
+print(count_bits(inputlst))
 
 gamma = ''
-for i in range(len(bits_count)):
-    if bits_count[i][0] > bits_count[i][1]:
-        gamma += '0'
+for i in count_bits(inputlst):
+    if i[0] > i[1]:
+        # more 0's
+        gamma += "0"
     else:
-        gamma += '1'
+        # more 1's
+        gamma += "1"
 
-epsilon = str(int('1'*bit_count) - int(gamma))
+epsilon = int("1"*len(count_bits(inputlst)))-int(gamma)
 
+gamma= int(gamma,2)
+epsilon = int(str(epsilon),2)
 
-print(f"The gamma is {int(gamma,2)}")
-print(f"The epsilon is {int(epsilon,2)}")
+print(f"Gamma: {gamma}")
+print(f"Epsilon: {epsilon}")
+print(f"Total power: {gamma*epsilon}")
 
-print(f"Meaning the power rating is {int(epsilon,2)*int(gamma,2)}")
-
-print(bits_count)
-
-# Calculating c02 scrubber
-
-co2_list = inputlst
-co2_index = 0
-
-for set in bits_count:
-    bits_count=[]
-    for setc in co2_list:
-        print(bits_count)
-        bit_index = 0
-        for bit in setc:
-            bit = int(bit)
-            if bit == 0:
-                bits_count[bit_index][0]+=1
-            else:
-                bits_count[bit_index][1]+=1
-            bit_index+=1
-
-    current_bit = 0 if set[0] < set[1] else 1
-    new_co2 = []
-    co2_list = [bit_set for bit_set in co2_list if int(bit_set[co2_index]) == current_bit]
-    co2_index +=1
-    if len(co2_list) == 1: break
-
-        
-
-print(co2_list[0])
-
-
-
-
-# Calculating Oxygen generator
-
-
+# Oxygen Crap
 oxy_list = inputlst
-oxy_index = 0
+bit = 0
+while len(oxy_list) != 1:
+    print(len(oxy_list))
+    bit_count = count_bits(oxy_list)
+    check_bit = 0 if bit_count[bit][0] > bit_count[bit][1] else 1
 
-for set in bits_count:
-    bits_count=[]
-    for seto in oxy_list:
-        
-        bit_index = 0
-        for bit in seto:
-            bit = int(bit)
-            if bit == 0:
-                bits_count[bit_index][0]+=1
-            else:
-                bits_count[bit_index][1]+=1
-            bit_index+=1
+    oxy_list = [item for item in oxy_list if item[bit] == str(check_bit)]
+    bit+=1
 
-    current_bit = 0 if set[0] > set[1] else 1
-    new_oxy = []
-    oxy_list = [bit_set for bit_set in oxy_list if int(bit_set[oxy_index]) == current_bit]
-    oxy_index +=1
-    if len(oxy_list) == 1: break
+# Co2 Crap
+co2_list = inputlst
+bit = 0
+while len(co2_list) != 1:
+    print(len(co2_list))
+    bit_count = count_bits(co2_list)
+    check_bit = 1 if bit_count[bit][0] > bit_count[bit][1] else 0
 
+    co2_list = [item for item in co2_list if item[bit] == str(check_bit)]
+    bit+=1
 
+co2= int(co2_list[0],2)
+oxy = int(oxy_list[0],2)
 
-print(oxy_list[0])
+print(f"Co2: {co2}")
+print(f"Oxygen: {oxy}")
+print(f"Total lifesupport: {co2*oxy}")

@@ -1,0 +1,1 @@
+input_raw = open("input.txt","r")
