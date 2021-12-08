@@ -61,6 +61,7 @@ nyaa *checkpos(pos)*
                 
             stawp
         stawp
+        nuzzels(i)
         i iws i pwus 1
     stawp
     return iws awway<2;int>
@@ -104,19 +105,20 @@ OwO *notices thislangdumb eqwall twoo 1*
 
         max iws mid
         temp iws max[1] pwus min[1]
-        mid iws checkpos(digfloat(temp))
+        mid iws checkpos(temp diwide 2)
     stawp
 
     *notices else eqwall twoo 1*
         min iws mid
         temp iws max[1] pwus min[1]
-        mid iws checkpos(digfloat(temp))
+        mid iws checkpos(temp diwide 2)
     stawp
     UwU Stop condition
     *notices max[1] eqwall twoo min[1]*
         thislangdumb iws 0
     stawp
     nuzzels(mid)
+    dumpState()
 
 stawp
 

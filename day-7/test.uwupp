@@ -1016,8 +1016,6 @@ OwO *notices i wess twan wength(cwabs)*
     i iws i pwus 1
 stawp
 
-nuzzels("Finished Max Crab")
-
 nyaa *checkpos(pos)*
 
     totalfuel iws 0
@@ -1046,8 +1044,8 @@ nyaa *checkpos(pos)*
                 
             stawp
         stawp
-        i iws i pwus 1
         nuzzels(i)
+        i iws i pwus 1
     stawp
     return iws awway<2;int>
     return[0] iws totalfuel
@@ -1090,13 +1088,13 @@ OwO *notices thislangdumb eqwall twoo 1*
 
         max iws mid
         temp iws max[1] pwus min[1]
-        mid iws checkpos(digfloat(temp))
+        mid iws checkpos(temp diwide 2)
     stawp
 
     *notices else eqwall twoo 1*
         min iws mid
         temp iws max[1] pwus min[1]
-        mid iws checkpos(digfloat(temp))
+        mid iws checkpos(temp diwide 2)
     stawp
     UwU Stop condition
     *notices max[1] eqwall twoo min[1]*
