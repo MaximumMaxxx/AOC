@@ -1,7 +1,3 @@
-
-from typing import final
-
-
 main_list = []
 with open("input.txt","r") as input:
     inputlst = [[item.split("|")[0].strip().split(" "),item.split("|")[1].strip().split(" ")] for item in input.read().split("\n")]
