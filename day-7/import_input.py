@@ -7,7 +7,7 @@ def main():
 
     print(crabs)
 
-    with open("main.uwupp","w") as UwU:
+    with open("test.uwupp","w") as UwU:
         UwU.write(f"awway_len iws {len(crabs)}\n") 
 
         for crab in enumerate(crabs):

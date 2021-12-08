@@ -3,8 +3,7 @@ i iws 0
 
 OwO *notices i wess twan wength(contwents)*
     crabs iws spwit(contwents[i],",")
-
-
+    crabs iws 
     i iws i pwus 1
 stawp
 nuzzels(crabs)
@@ -12,17 +11,22 @@ nuzzels(crabs)
 maxcrab iws 1937
 
 nuzzels(maxcrab)
-
 nyaa *checkpos(pos)*
 
     totalfuel iws 0
     i iws 0
+           
     OwO *notices i wess twan wength(crabs)*
         crabcost iws 0
         thislangisdumb iws 1
+        nuzzels(i)
+        nuzzels("Test")
+            
 
         OwO *notices thislangisdumb eqwall twoo 1*
             crab iws crabs[i]
+            nuzzels(crab)
+            dumpState()
             ( ͡° ͜ʖ ͡°)
             *notices crabs[i] wess twan pos*
                 totalfuel iws totalfuel pwus crabcost
@@ -30,21 +34,28 @@ nyaa *checkpos(pos)*
                 crabcost iws crabcost pwus 1
             stawp
 
-            *notices crab gweatew twan pos*
+            *notices cwab gweatew twan pos*
                 totalfuel iws totalfuel pwus crabcost
                 crabs[i] iws crabs[i] minwus 1
                 crabcost iws crabcost pwus 1
             stawp
+                   
             ( ͡° ͜ʖ ͡°)
-            *notices crabs[i] eqwall twoo pos*
-                thislangisdumb iws 0
-
+            *notices 1 eqwall twoo 1*
+                UwUthislangisdumb iws 0
+            stawp
+             
             i iws i pwus 1
-            
+        
+
+
+            thislangisdumb iws 0
         stawp
 
 
+        i iws i pwus 1
     stawp
+
 wetuwn totalfuel
 
 

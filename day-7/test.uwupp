@@ -1,0 +1,20 @@
+wimit iws 10  
+cwabs iws awway<wimit;int>
+
+
+
+cwabs[0] iws 16
+cwabs[1] iws 1
+cwabs[2] iws 2
+cwabs[3] iws 0
+cwabs[4] iws 4
+cwabs[5] iws 2
+cwabs[6] iws 7
+cwabs[7] iws 1
+cwabs[8] iws 2
+cwabs[9] iws 14
+nuzzels("Wack")
+*notices cwabs[0] eqwall twoo 16*
+    nuzzels("Pog")
+stawp
+nuzzels(cwabs)
