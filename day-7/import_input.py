@@ -1,7 +1,7 @@
 import math
 # This code reads, then imports the input into the uwupp file becuase you can't directly do it
 def main():
-    with open("sampleinput.txt","r") as input:
+    with open("input.txt","r") as input:
         inputraw = input.read()
 
     cwabs = [int(cwab) for cwab in inputraw.split(",")]
@@ -24,7 +24,14 @@ cwabs iws awway<{len(cwabs)};int>\n
         UwU.write(f"""
 nuzzels(cwabs)
 
-maxcrab iws {max_crab}
+maxcrab iws 0
+i iws 0
+OwO *notices i wess twan wength(cwabs)*
+    *notices cwabs[i] gweatew twan maxcrab*
+        maxcrab iws cwabs[i]
+    stawp
+    i iws i pwus 1
+stawp
 
 nyaa *checkpos(pos)*
 
@@ -38,35 +45,84 @@ nyaa *checkpos(pos)*
         OwO *notices thislangisdumb eqwall twoo 1*
             crab iws cwabs[i]
             *notices crab wess twan pos*
-                totalfuel iws totalfuel pwus crabcost
-                cwabs[i] iws cwabs[i] pwus 1
                 crabcost iws crabcost pwus 1
+                cwabs[i] iws cwabs[i] pwus 1
+                totalfuel iws totalfuel pwus crabcost
             stawp
 
             *notices crab gweatew twan pos*
-                totalfuel iws totalfuel pwus crabcost
-                cwabs[i] iws cwabs[i] minwus 1
                 crabcost iws crabcost pwus 1
+                cwabs[i] iws cwabs[i] minwus 1
+                totalfuel iws totalfuel pwus crabcost
             stawp
                    
             *notices crab eqwall twoo pos*
                 thislangisdumb iws 0
+                
             stawp
-
         stawp
         i iws i pwus 1
-
     stawp
+    return iws awway<2;int>
+    return[0] iws totalfuel
+    return[1] iws pos
+wetuwn return
 
-wetuwn totalfuel
+UwU this function is a hot mess but it works
+nyaa *digfloat(num)*
+    num2 iws num
+    num4 iws num twimes 10
+    num iws num4 diwide 2
+
+    num2 iws num2 diwide 2
+    num3 iws num2 twimes 20
+    diff iws num4 minwus num3
+    nuzzels(diff)
+    return iws num2
+    *notices diff gweatew twan 4*
+        nuzzels("round up")
+        return iws num2 pwus 1
+    stawp
+wetuwn return
 
 min iws checkpos(0)
-max iws checkpos({max_crab})
-mid iws checkpos({math.floor(max_crab/2)})
+max iws checkpos(maxcrab)
+mid iws checkpos(maxcrab diwide 2)
 
 nuzzels(min)
 nuzzels(max)
 nuzzels(mid)
+
+final iws awway<2;int>
+
+thislangdumb iws 1
+OwO *notices thislangdumb eqwall twoo 1*
+
+    else iws 1
+    *notices min[0] wess twan max[0]*
+        else iws 0
+
+        max iws mid
+        temp iws max[1] pwus min[1]
+        mid iws checkpos(digfloat(temp))
+    stawp
+
+    *notices else eqwall twoo 1*
+        min iws mid
+        temp iws max[1] pwus min[1]
+        mid iws checkpos(digfloat(temp))
+    stawp
+    UwU Stop condition
+    *notices max[1] eqwall twoo min[1]*
+        thislangdumb iws 0
+    stawp
+    nuzzels(mid)
+
+stawp
+
+nuzzels("The final answer is: ")
+nuzzels(mid)
+
 
 """)
 
