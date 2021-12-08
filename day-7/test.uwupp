@@ -1,7 +1,8 @@
-wimit iws 10  
-cwabs iws awway<wimit;int>
 
+UwU This is the auto generated output of inport_input.py
+UwU It's overall very similar to not-stupid-solution.py so I would whole heartedly suggest just using that
 
+cwabs iws awway<10;int>
 
 cwabs[0] iws 16
 cwabs[1] iws 1
@@ -13,8 +14,52 @@ cwabs[6] iws 7
 cwabs[7] iws 1
 cwabs[8] iws 2
 cwabs[9] iws 14
-nuzzels("Wack")
-*notices cwabs[0] eqwall twoo 16*
-    nuzzels("Pog")
-stawp
+
 nuzzels(cwabs)
+
+maxcrab iws 16
+
+nuzzels(wength(cwabs))
+
+nyaa *checkpos(pos)*
+
+    totalfuel iws 0
+    i iws 0
+           
+    OwO *notices i wess twan wength(cwabs)*
+        crabcost iws 0
+        thislangisdumb iws 1
+            
+        OwO *notices thislangisdumb eqwall twoo 1*
+            crab iws cwabs[i]
+            *notices crab wess twan pos*
+                totalfuel iws totalfuel pwus crabcost
+                cwabs[i] iws cwabs[i] pwus 1
+                crabcost iws crabcost pwus 1
+            stawp
+
+            *notices crab gweatew twan pos*
+                totalfuel iws totalfuel pwus crabcost
+                cwabs[i] iws cwabs[i] minwus 1
+                crabcost iws crabcost pwus 1
+            stawp
+                   
+            *notices crab eqwall twoo pos*
+                thislangisdumb iws 0
+                
+            stawp
+        stawp
+        i iws i pwus 1
+        nuzzels(i)
+    stawp
+
+wetuwn totalfuel
+
+UwUmin iws checkpos(0)
+UwUmax iws checkpos(16)
+mid iws checkpos(5)
+
+UwUnuzzels(min)
+UwUnuzzels(max)
+nuzzels(mid)
+

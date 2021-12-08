@@ -1,7 +1,7 @@
 import math, time
 
 start_time = time.time()
-input = open("input.txt","r")
+input = open("sampleinput.txt","r")
 inputraw = input.read()
 
 crabs = inputraw.split(",")
@@ -34,6 +34,8 @@ minc = check_pos(1,crabs)
 maxc = check_pos(max_crab,crabs)
 midc = check_pos(math.floor(max_crab/2),crabs)
 
+test = check_pos(5,crabs)
+
 while minc[0] != midc[0]:
     if minc[0] < midc[0]:
         # Recalculate mid and find new max
@@ -47,3 +49,4 @@ while minc[0] != midc[0]:
 
 
 print(f"The best fuel is {midc[0]}, Calculated in {time.time()-start_time}s")
+print(test)
