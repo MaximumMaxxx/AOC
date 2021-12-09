@@ -26,6 +26,10 @@ print(f"There are {thing_count} instances of number with a unique number of line
 
 # 1,2,3,4,5
 
+letters7 = ["012456","14","02346","01346","1345","01356","012356","146","0123456","013456"]
+
+grand_total = 0
+
 setindex = {"a":0,"b":1,"c":2,"d":3,"e":4,"f":5,"g":6}
 setindexinverse = ["a","b","c","d","e","f","g"]
 for item in inputlst:
@@ -47,16 +51,14 @@ for item in inputlst:
     letters = [0,0,0,0, 0,0,0]
 
     # Getting the top part of the code (6)
-    for letter in number_codes[7]:
-        if letter not in number_codes[3]:
-            difference = letter
+    difference = [letter for letter in number_codes[7] if letter not in number_codes[1]]
 
-    final_letters[6] = difference
+    final_letters[6] = difference[0]
 
     # Generating a lsit of the counts + letters for the non-sorted numbers
     unsortedlettercounts = [[0,""],[0,""],[0,""],[0,""],[0,""],[0,""],[0,""]]
-    for item in uncatagorized:
-        for letter in item:
+    for thing in uncatagorized:
+        for letter in thing:
             unsortedlettercounts[setindex[letter]][0] += 1
             unsortedlettercounts[setindex[letter]][1] = letter
 
@@ -65,7 +67,27 @@ for item in inputlst:
         if char[0] == 3: final_letters[2] = char[1]
         if char[0] == 6 and char[1] != final_letters[6]: final_letters[0] = char[1]
         if char[0] == 5 and char[1] in number_codes[1]: final_letters[1] = char[1]
+        if char[0] == 4 and char[1] in number_codes[1]: final_letters[4] = char[1]
         if char[0] == 5 and char[1] not in number_codes[1]: final_letters[3] = char[1]
+        if char[0] == 4 and char[1] not in number_codes[1]: final_letters[5] = char[1]
 
 
-    print(final_letters)
+    # Construct the numbers after the | in the original problem
+    current_num = ""
+    for num in item[1]:
+        letterstr = ""
+        for letter in num:
+            letterstr += str(final_letters.index(letter))
+        letterstr = "".join(str(sorted(letterstr)).translate(str.maketrans({"[":"","]":"",",":""," ":"","'":"",})))
+        
+        
+
+        if letterstr in letters7:
+            print("sucess")
+            current_num = current_num+str(letters7.index(letterstr))
+        else:
+            print("error")
+    grand_total += int(current_num)
+    print("iter---------------------------------------")
+
+print(f"The total of all numbers displayed on the 7 segments dislays is {grand_total}")
