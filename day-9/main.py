@@ -42,42 +42,47 @@ for i in range(len(input)):
             lows.append((int(i),int(j)))
 
 
-
-print(lows)
+rslt = []
 i,j = (0,0)
-def basin_check(arr):
+def basin_check(arr:list):
+    print("Recusion")
+    arr = arr
     nomore= True
     for i,j in arr:
         # Left
         if j != 0 :
-            if inputsplit[i][j-1] not in arr and int(inputsplit[i][j-1]) != 9:
+            if (i,j-1) not in arr and int(inputsplit[i][j-1]) != 9:
                 arr.append((i,j-1))  
                 nomore= False
         
         # Right
         if j != len(inputsplit[0])-1 :
-            if inputsplit[i][j+1] not in arr and int(inputsplit[i][j+1]) != 9:
+            if (i,j+1) not in arr and int(inputsplit[i][j+1]) != 9:
                 arr.append((i,j+1))  
                 nomore= False
         # Up
         if i != 0 :
-            if inputsplit[i-1][j] not in arr and int(inputsplit[i-1][j]) != 9:
+            if (i-1,j) not in arr and int(inputsplit[i-1][j]) != 9:
                 arr.append((i-1,j))  
                 nomore= False
         # Down
         if i != len(inputsplit)-1 :
-            if inputsplit[i+1][j] not in arr and int(inputsplit[i+1][j]) != 9:
+            if (i+1,j) not in arr and int(inputsplit[i+1][j]) != 9 :
                 arr.append((i+1,j))
                 nomore= False
-        print(arr)
 
-    if nomore:return arr
+    if nomore:
+        global rslt
+        rslt = arr
+        return
     else: arr = basin_check(arr=arr)
 
 basins = []
 for i,j in lows:
-    basins.append(basin_check(arr=[(i,j)]))
+    basin_check(arr=[(i,j)])
+    basins.append(rslt)
 
+sorted_basins = sorted(basins, key=len)
+sorted_basins.reverse()
 
-
-print(basins)
+print(f"The three largest basins are {len(sorted_basins[0])}, {len(sorted_basins[1])}, and {len(sorted_basins[2])} meaning the final answer is {len(sorted_basins[0])*len(sorted_basins[1])*len(sorted_basins[2])}")
