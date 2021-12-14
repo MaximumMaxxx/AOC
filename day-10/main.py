@@ -36,14 +36,16 @@ for line in input:
             if closecharmatches[char] == stack[len(stack)-1]: stack.pop(len(stack)-1)
             else:
                 break
+
     addon_stack = []
 
     # Gnerating the add on stack
     for char in stack:
         addon_stack.append(addon_stack_lookuptable[char])
     localscore = 0
-    print(addon_stack)
+
     # Generating the math order like this: mathorder = ["]",")","}",">"]
+    addon_stack.reverse()
     addon_stack_copy = addon_stack.copy()
     mathorder = []
     while len(addon_stack_copy) != 0:
@@ -57,8 +59,10 @@ for line in input:
         localscore *= 5
         if value in addon_stack: count = addon_stack.count(value)
         else: count = 0
-        localscore += count * (index+1)
-        print(localscore)
+        value = closecgars.index(value)
+        print(f"The value is {value}, the count is {count}, and the index is {index}")
+        localscore += count * value
+
 
 
 
