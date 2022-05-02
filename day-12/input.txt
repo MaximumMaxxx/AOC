@@ -23,8 +23,4 @@ av-gp
 rz-qz
 VG-start
 sk-fh
-<<<<<<< HEAD
 VG-av
-=======
-VG-av
->>>>>>> 0947c88056dc2fe8a032d7d336230681987b480c
